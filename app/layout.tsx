@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 
-import { Navigation } from "./components/Navigations";
+import { Navigation } from "../components/Navigations";
 
 export const metadata = {
   title: "Next.js",
