@@ -1,10 +1,7 @@
 "use client"
-import { useRouter, usePathname, useSearchParams,useParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 
 export default function Pokemon() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const usedSearchParams=useSearchParams();
   const usePaarams= useParams();
 
 
