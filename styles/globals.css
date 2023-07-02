@@ -121,7 +121,7 @@ a {
 .container{
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.8fr 0.8fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     justify-items: stretch;

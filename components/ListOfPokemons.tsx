@@ -1,7 +1,7 @@
 "use client";
 import { Image, Card, Text, Button, Group,Title, JsonInput } from "@mantine/core";
 import React, { useEffect, useState } from "react";
-
+import ImagenPokemon from '../components/ImageofPokemon';
 
 interface Pokemon {
   name: string;
@@ -36,7 +36,8 @@ const Pokemon = () => {
         const cnt = po.url.split("/");
         const cnt2 = cnt.length - 2;
         po.id = parseInt(cnt[cnt2]);
-        return po;
+        if(po.id>0)
+          return po;
       });
       
       setPokemonData(poks);
@@ -48,8 +49,11 @@ const Pokemon = () => {
 
   return (
     <>
-     <Title order={1}>Lista de Pokemom</Title>
-      <Image width={240} mx="auto" radius="md" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/25.png" alt="Random image" />
+    <Image width={300} height={300} mx="auto" radius="md" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/133.gif" alt="Random image" />
+
+     <Image width={240}  mx="auto" radius="md" src="/pkmlogo.png" alt="Random image" />
+      
+      <Image width={300} height={"50%"}  mx="auto" radius="md" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif" alt="Random image" />
 
       
       {pokemonData.slice(0, pokemonData.length).map((poke) => (
@@ -62,14 +66,14 @@ const Pokemon = () => {
             className="cartapokemon"
           >
             <Card.Section>
-              <Image src="../public/pkmlogo.png" height={160} alt="pokemon" />
+              <ImagenPokemon idpokemon={poke.id}/>
             </Card.Section>
 
             <Group position="apart" mt="md" mb="xs">
               <Text weight={500} className="nombrepoke">{poke.name}</Text>
             </Group>
             <Text size="md" color="dimmed">
-              {poke.url} {poke.id}
+              {poke.url}
             </Text>
             <Button variant="light" color="blue" fullWidth mt="md" radius="md">
               Revisar Pokemon 
