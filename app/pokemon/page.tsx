@@ -6,8 +6,9 @@ const PokemonPage = () => {
 
   return (
     <>
-      <Image width={240} mx="auto" radius="md" src="/pkmlogo.png" alt="Random image" />
+      
       <ListOfPokemons/>
+      
     </>
   );
 };
