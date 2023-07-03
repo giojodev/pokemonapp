@@ -108,7 +108,8 @@ a {
 }
 
 .cartapokemon{
-  width: 30rem;
+  width: 5rem;
+  height: 5rem;
   margin: auto;
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -118,12 +119,26 @@ a {
   text-transform: uppercase;
 
 }
-.container{
+.containerPokemon {
+  float: left;
+  clear: both;
   display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.8fr 0.8fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+.headerpokemon{
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  float: left;
+}
+.container{
+  top: 10%; /* Coloca el borde superior del div en el 50% de la pantalla */
+  left: 20%; /* Coloca el borde izquierdo del div en el 50% de la pantalla */
+  /* transform: translate(-50%, -50%);  */
+  position: absolute;
 }
