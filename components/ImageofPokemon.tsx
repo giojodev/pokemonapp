@@ -8,7 +8,7 @@ const ImagenPokemon=(idpokemon)=>{
     // console.log(url);
     return(
         <>
-            <Image src={url} height={60} alt="pokemon" />
+            <Image src={url} height={80} alt="pokemon" />
         </>
     );
 }

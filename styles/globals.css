@@ -108,12 +108,12 @@ a {
 }
 
 .cartapokemon{
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   margin: auto;
   margin-bottom: 2rem;
   margin-top: 2rem;
-
+  cursor: pointer;
 }
 .nombrepoke{
   text-transform: uppercase;
@@ -129,6 +129,7 @@ a {
   grid-row-gap: 20px;
   justify-items: stretch;
   align-items: stretch;
+margin-left: 5rem;
 }
 .headerpokemon{
   clear: both;
@@ -141,4 +142,31 @@ a {
   left: 20%; /* Coloca el borde izquierdo del div en el 50% de la pantalla */
   /* transform: translate(-50%, -50%);  */
   position: absolute;
+}
+.contenedorTexto{
+  position: relative;
+  display: inline-block;
+}
+.nombrePokemon{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+.nombrepoke{
+  /* width: fit-content; */
+  font-size: 0.8rem;
+  text-align: center;
+}
+.contenedorTexto:hover .nombrePokemon{
+opacity: 1;
 }
