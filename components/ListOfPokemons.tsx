@@ -106,7 +106,7 @@ const Pokemon = () => {
             </Button> */}
             </Card>
             <div className="nombrePokemon">
-              <Text weight={300} className="nombrepoke">
+              <Text weight={500} className="nombrepoke">
                 {poke.name}
               </Text>
             </div>
