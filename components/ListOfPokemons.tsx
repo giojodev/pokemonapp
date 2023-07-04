@@ -1,13 +1,5 @@
 "use client";
-import {
-  Image,
-  Card,
-  Text,
-  Button,
-  Group,
-  Title,
-  JsonInput,
-} from "@mantine/core";
+import { Image, Card, Text, Button, Group, Title, Modal } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import ImagenPokemon from "../components/ImageofPokemon";
 
@@ -17,8 +9,11 @@ interface Pokemon {
   id: number;
 }
 
+
+
 const Pokemon = () => {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
+
 
   useEffect(() => {
     fetchData();
@@ -49,6 +44,10 @@ const Pokemon = () => {
     }
   };
 
+  function test(idpokemon: number) {
+    console.log("test");
+  }
+
   return (
     <>
       <section className="headerpokemon">
@@ -78,10 +77,11 @@ const Pokemon = () => {
           alt="Random image"
         />
       </section>
-
+      
       <div className="containerPokemon">
+
         {pokemonData.slice(0, pokemonData.length).map((poke) => (
-          <div className="contenedorTexto">
+          <div className="contenedorTexto" >
             <Card
               shadow="sm"
               padding="md"
