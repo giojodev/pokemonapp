@@ -1,7 +1,7 @@
 "use client";
 import { Image, Card, Text } from "@mantine/core";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { redirect } from "next/navigation";
 import ImagenPokemon from "../components/ImageofPokemon";
 // import { redirect } from "next/dist/server/api-utils";
@@ -14,7 +14,7 @@ interface Pokemon {
 
 const Pokemon = () => {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
-  
+  const router= useRouter();
 
   useEffect(() => {
     fetchData();
@@ -49,7 +49,8 @@ const Pokemon = () => {
 
    
     console.log("test")
-    redirect(`/pokemon/${idpokemon}`);
+    // redirect(`/pokemon/${idpokemon}`);
+    router.push(`/pokemon/${idpokemon}`);
     // useEffect(()=>{
     //   push('/movements');
     // },[]);
