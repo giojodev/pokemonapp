@@ -1,7 +1,10 @@
 "use client";
-import { Image, Card, Text, Button, Group, Title, Modal } from "@mantine/core";
+import { Image, Card, Text } from "@mantine/core";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { redirect } from "next/navigation";
 import ImagenPokemon from "../components/ImageofPokemon";
+// import { redirect } from "next/dist/server/api-utils";
 
 interface Pokemon {
   name: string;
@@ -9,11 +12,9 @@ interface Pokemon {
   id: number;
 }
 
-
-
 const Pokemon = () => {
   const [pokemonData, setPokemonData] = useState<Pokemon[]>([]);
-
+  
 
   useEffect(() => {
     fetchData();
@@ -44,8 +45,14 @@ const Pokemon = () => {
     }
   };
 
-  function test(idpokemon: number) {
-    console.log("test");
+  function redirectPokeDetail(idpokemon:number) {
+
+   
+    console.log("test")
+    redirect(`/pokemon/${idpokemon}`);
+    // useEffect(()=>{
+    //   push('/movements');
+    // },[]);
   }
 
   return (
@@ -78,11 +85,12 @@ const Pokemon = () => {
         />
       </section>
       
-      <div className="containerPokemon">
+      <div className="containerPokemon" >
 
         {pokemonData.slice(0, pokemonData.length).map((poke) => (
-          <div className="contenedorTexto" >
+          <div className="contenedorTexto"  key={poke.id} onClick={()=>redirectPokeDetail(poke.id)}>
             <Card
+            
               shadow="sm"
               padding="md"
               radius="md"
@@ -93,17 +101,7 @@ const Pokemon = () => {
                 <ImagenPokemon idpokemon={poke.id} />
               </Card.Section>
 
-              {/* <Group position="apart" mt="md" mb="xs">
-              <Text weight={500} className="nombrepoke">
-                {poke.name}
-              </Text>
-            </Group> */}
-              {/* <Text size="md" color="dimmed">
-              {poke.url}
-            </Text>
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-              Revisar Pokemon
-            </Button> */}
+             
             </Card>
             <div className="nombrePokemon">
               <Text weight={500} className="nombrepoke">
